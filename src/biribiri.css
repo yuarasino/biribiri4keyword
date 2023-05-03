@@ -1,0 +1,120 @@
+*, *::before, *:after {
+  box-sizing: inherit;
+}
+
+
+/** コンテナ */
+
+.brContainer {
+  box-sizing: border-box;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+
+/** ディスプレイ */
+
+@keyframes isDriving {
+  0% { transform: translate(-2px, 2px); }
+  50% { transform: translate(0, 0); }
+  100% { transform: translate(-2px, 2px); }
+}
+
+.brDisplay {
+  padding: 0;
+  position: relative;
+  display: flex;
+  width: 384px;
+  height: 128px;
+  background: #CCC;
+  color: #666;
+}
+
+.brDisplay.isDriving {
+  background: #7ECDF6;
+  color: #EE4096;
+}
+
+.brDisplayImage {
+  position: relative;
+  z-index: 10;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+}
+
+.brDisplayImage img {
+  width: 128px;
+  height: 128px;
+  transform: translate(-2px, 2px);
+}
+
+.brDisplayImage img.isDriving {
+  animation: isDriving .1s infinite;
+}
+
+.brDisplayShocker {
+  position: relative;
+  z-index: 10;
+  width: calc(100% - 128px);
+  height: 128px;
+  padding: 16px;
+  line-height: 1;
+}
+
+.brDisplayShocker div.isDriving {
+  animation: isDriving .1s .05s infinite;
+}
+
+.brDisplayShocker p {
+  margin: 0;
+  margin-top: 16px;
+}
+
+.brDisplayShocker p + p {
+  margin-top: 4px;
+}
+
+.brDisplayShocker i {
+  font-size: 32px;
+  vertical-align: -4px;
+}
+
+.brDisplayShocker span {
+  font-size: 32px;
+}
+
+.brDisplayShocker small {
+  font-size: 16px;
+}
+
+
+/** シリアル */
+
+.brSerial {
+  padding: 32px;
+}
+
+.brSerialButton {
+  appearance: none;
+  padding: 8px;
+  background-color: #0082FC;
+  border: 2px solid #0052CC;
+  color: #fff;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.brSerialButton[disabled] {
+  background-color: #CCC;
+  border: 2px solid #999;
+  color: #666;
+}
+
+.brSerialButton i {
+  font-size: 16px;
+  vertical-align: -2px;
+}
+
+.brSerialButton span {
+  font-size: 16px;
+}
